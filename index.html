@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Metodo Map con JavaScript</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row center">
+
+
+        <div class="col-md-12">
+          <h1 class="text-center">Método Map en JavaScript Sin Rodeo</h1>
+          </div>
+
+          <div class="col-md-12">
+            <ol id="containerP"></ol>
+          </div>
+
+        </div>
+   </div> 
+   <script>
+    let containerP = document.querySelector('#containerP');
+    containerP.innerHTML = "";
+    let habilidades = ['PHP','PYTHON','JAVASCRIPT','NODE.JS','VUEJS'];
+                    //[  0       1         3            4         5]
+    /**forma 1*/
+    habilidades.map(function(h){
+      console.log(h)
+      containerP.innerHTML +=`<li>${h}</li>`;
+    });
+
+    /**forma 2*/
+    habilidades.map((h)=>{
+      console.log('Segunda forma: ' + h)
+    });
+
+    /**forma 3*/
+    habilidades.map((h, posicion)=>{
+      console.log(`Habilidad: ${h} en la posiscion ${posicion}`);
+    });
+    
+    /**forma 4*/
+    let i = 0;
+    habilidades.map((h)=>{
+      console.log(`Hab: ${h} en la pos: ${i ++}`);
+    });
+
+   </script>
+  </body>
+</html>
